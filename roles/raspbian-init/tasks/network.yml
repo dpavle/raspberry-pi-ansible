@@ -1,0 +1,10 @@
+---
+- name: set a static ip address for eth0
+  become: yes
+  blockinfile:
+    path: /etc/dhcpcd.conf
+    block: |
+        interface eth0
+        static ip_address={{ eth0_ip }}
+        static routers={{ eth0_gateway }}
+        static domain_name_servers={{ eth0_dns }}

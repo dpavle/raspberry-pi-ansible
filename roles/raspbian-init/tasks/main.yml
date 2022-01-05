@@ -1,0 +1,12 @@
+---
+- name: update apt cache and upgrade all packages
+  become: yes
+  apt: 
+      update_cache: yes
+      upgrade: yes
+
+- name: network configuration
+  include_tasks: network.yml
+
+- name: user configuraton
+  include_tasks: user.yml

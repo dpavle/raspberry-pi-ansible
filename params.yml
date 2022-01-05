@@ -1,0 +1,9 @@
+
+# users 
+admin_user: pavle
+admin_ssh_pubkey: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
+
+# network
+eth0_ip: 192.168.100.4
+eth0_gateway: 192.168.100.1
+eth0_dns: 1.1.1.1
