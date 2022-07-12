@@ -1,11 +1,10 @@
 ---
 - name: initialize RPi after a fresh Raspbian flash
-  hosts: rpis
+  hosts: all
   vars_files:
   - ./params.yml
   remote_user: "{{ default_user }}"
   become: yes
-  tasks:
-    - roles:
-        - raspbian-init
-        - blalop.pihole
+  roles:
+     - raspbian-init
+#     - blalop.pihole
